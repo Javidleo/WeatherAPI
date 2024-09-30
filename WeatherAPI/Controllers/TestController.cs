@@ -15,4 +15,12 @@ public class TestController : ControllerBase
         var content = toDoListHandler.GetAllTasks();
         return Ok(content); 
     }
+    [HttpGet("weather")]
+    public IActionResult GetWeather()
+    {
+        var weatherHandler = new WeatherHandler();
+
+        var content = weatherHandler.GetWeather();
+        return Ok(content);
+    }
 }
