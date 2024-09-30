@@ -15,12 +15,14 @@ public class ToDoListHandler
         var response = client.GetAsync("api/ToDo").Result;
         if(response.StatusCode != HttpStatusCode.OK)
         {
-            return "";
+            return "error";
         }
 
         var content = response.Content.ReadAsStringAsync().Result;
         var result = JsonConvert.DeserializeObject<List<GetAllTaskVm>>(content);
-        
+
+        var serializedContent = JsonConvert.SerializeObject(result);
+
         return content;
     }
 }
