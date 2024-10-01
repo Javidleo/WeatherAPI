@@ -16,7 +16,8 @@ public class Program
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddTransient<ToDoListHandler>();   
+
+        builder.Services.AddTransient<WeatherHandler>();
 
 
         var app = builder.Build();
