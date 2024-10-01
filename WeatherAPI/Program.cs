@@ -1,4 +1,6 @@
 
+using WeatherAPI.Model;
+
 namespace WeatherAPI;
 
 public class Program
@@ -13,6 +15,9 @@ public class Program
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        builder.Services.AddTransient<ToDoListHandler>();   
+
 
         var app = builder.Build();
 
