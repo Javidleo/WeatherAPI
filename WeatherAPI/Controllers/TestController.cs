@@ -73,5 +73,21 @@ public class TestController : ControllerBase
         {
             return BadRequest("Already checked");
         }
+        
+    }
+
+    [HttpDelete("{id}")]
+    public IActionResult Delete(int id)
+    {
+        var task = _handler.DeleteTask(id);
+
+        if(task == true)
+        {
+            return Ok("Deleted successfully");
+        }
+        else
+        {
+            return NotFound("not found");
+        }
     }
 }

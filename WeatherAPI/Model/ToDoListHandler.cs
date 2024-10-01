@@ -57,4 +57,13 @@ public class ToDoListHandler
         }
         return true;
     }
+    public bool DeleteTask(int id)
+    {
+        var response = client.DeleteAsync($"api/ToDo/{id}").Result;
+        if(response.StatusCode != HttpStatusCode.NoContent)
+        {
+            return false;
+        }
+        return true;
+    }
 }
