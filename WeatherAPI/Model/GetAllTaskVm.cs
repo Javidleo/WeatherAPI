@@ -7,3 +7,5 @@ public class GetAllTaskVm
     public bool IsCompleted { get; set; }
     public DateTime CreationTime { get; set; }
 }
+
+
