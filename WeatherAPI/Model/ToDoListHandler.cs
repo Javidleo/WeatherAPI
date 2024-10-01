@@ -50,6 +50,8 @@ public class ToDoListHandler
     }
     public bool Mark(int id)
     {
+        //whenever wants to use clients http methods like PatchAsJsonAsync it requires
+        //an object to send.
         var response = client.PatchAsJsonAsync($"api/ToDo/mark/{id}", new object()).Result;
         if(response.StatusCode != HttpStatusCode.NoContent)
         {
